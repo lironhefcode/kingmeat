@@ -16,9 +16,16 @@ function group(id, title, summary, type, options, extra = {}) {
 }
 
 const sizeGroup = (title, double, triple) =>
-  group("size", title, "", "single", ["רגיל", ["מילוי כפול", double], ["מילוי משולש", triple]]);
+  group("size", title, "", "single", [
+    "רגיל",
+    ["קינג מיט כפול", double],
+    ["קינג מיט משולש", triple],
+  ]);
 
-const BREAD = group("bread", "לחם", "", "single", ["ג'בטה לבנה מתנור לבנים", "ג'בטה מחיטה מלאה"]);
+const BREAD = group("bread", "לחם", "", "single", [
+  "ג'בטה לבנה מתנור לבנים",
+  "ג'בטה מחיטה מלאה",
+]);
 
 const REMOVE = group("remove", "להוריד מהמנה", "בלי", "multi", [
   "גוואקמולי",
@@ -54,7 +61,7 @@ const SALAD_REMOVE = group(
     "רוטב צ'יפוטלה",
     "רוטב איולי קארי",
   ],
-  { max: 11, hint: "לפחות 3 מרכיבים נשארים" }
+  { max: 11, hint: "לפחות 3 מרכיבים נשארים" },
 );
 
 const SALAD_EXTRAS = group("salad-extras", "תוספות לסלט", "תוספות", "multi", [
@@ -79,7 +86,7 @@ const inDish = (max) =>
       ["ביצה", 7],
       ["פורטבלו", 8],
     ],
-    { max, hint: `עד ${max}` }
+    { max, hint: `עד ${max}` },
   );
 
 const SIDE_SAUCES = group("side-sauces", "רטבים בצד", "בצד", "multi", [
@@ -111,7 +118,7 @@ const COMBO_DRINK = group(
   "שתייה",
   "single",
   ["קוקה קולה", "קוקה קולה זירו", "ספרייט", "ספרייט זירו"],
-  { showDefault: true }
+  { showDefault: true },
 );
 
 // The four fillings, each served three ways
@@ -131,10 +138,17 @@ export const FORMATS = [
     plural: "כריכים",
     photo: "sandwich",
     desc: "ג'בטה מתנור לבנים או מחיטה מלאה, עם אבוקדו, צ'ימיצ'ורי, חסה, עגבנייה, בצל, חמוצים ורטבי שום, צ'יפוטלה וקארי.",
-    names: { meat: "כריך קינג מיט", chicken: "כריך קינג צ'יקן", burger: "כריך קינג בורגר", porto: "כריך קינג פורטו" },
+    names: {
+      meat: "כריך קינג מיט",
+      chicken: "כריך קינג צ'יקן",
+      burger: "כריך קינג בורגר",
+      porto: "כריך קינג פורטו",
+    },
     prices: { meat: 69, chicken: 69, burger: 69, porto: 65 },
     groups: (f) => [
-      isPorto(f) ? sizeGroup("גודל המנה", 18, 35) : sizeGroup("גודל המנה", 25, 44),
+      isPorto(f)
+        ? sizeGroup("גודל המנה", 18, 35)
+        : sizeGroup("גודל המנה", 25, 44),
       BREAD,
       REMOVE,
       inDish(6),
@@ -148,10 +162,17 @@ export const FORMATS = [
     plural: "טורטייה",
     photo: "roll",
     desc: "טורטייה עם אבוקדו, צ'ימיצ'ורי, חסה, עגבנייה, בצל, חמוצים ורטבי שום, צ'יפוטלה וקארי.",
-    names: { meat: "קינג רול", chicken: "צ'יקן רול", burger: "בורגר רול", porto: "פורטו רול" },
+    names: {
+      meat: "קינג רול",
+      chicken: "צ'יקן רול",
+      burger: "בורגר רול",
+      porto: "פורטו רול",
+    },
     prices: { meat: 69, chicken: 69, burger: 69, porto: 65 },
     groups: (f) => [
-      isPorto(f) ? sizeGroup("גודל הרול", 18, 34) : sizeGroup("גודל הרול", 25, 44),
+      isPorto(f)
+        ? sizeGroup("גודל הרול", 18, 34)
+        : sizeGroup("גודל הרול", 25, 44),
       REMOVE,
       inDish(6),
       SIDE_SAUCES,
@@ -164,10 +185,17 @@ export const FORMATS = [
     plural: "סלטים",
     photo: "salad",
     desc: "חסה, עגבניות שרי, קולסלאו, נבטים, אגוזים, בוטנים, אבוקדו, צ'ימיצ'ורי, חמוצים, בצל סגול וקרוטונים, ברטבי שום, צ'יפוטלה ואיולי קארי. אפשר להוריד מה שלא בא לכם.",
-    names: { meat: "סלט אנטריקוט", chicken: "סלט צ'יקן", burger: "סלט המבורגר", porto: "סלט פורטבלו" },
+    names: {
+      meat: "סלט אנטריקוט",
+      chicken: "סלט צ'יקן",
+      burger: "סלט המבורגר",
+      porto: "סלט פורטבלו",
+    },
     prices: { meat: 69, chicken: 69, burger: 69, porto: 65 },
     groups: (f) => [
-      isPorto(f) ? sizeGroup("תוספת מילוי", 16, 34) : sizeGroup("תוספת מילוי", 25, 44),
+      isPorto(f)
+        ? sizeGroup("תוספת מילוי", 16, 34)
+        : sizeGroup("תוספת מילוי", 25, 44),
       SALAD_REMOVE,
       SALAD_EXTRAS,
       inDish(8),
@@ -200,7 +228,7 @@ const mains = FORMATS.flatMap((format) =>
     image: photoFor(format.id, filling.id),
     badge: filling.veg ? "צמחוני" : undefined,
     groups: format.groups(filling.id),
-  }))
+  })),
 );
 
 // Meal deals: the dish plus fries and a soft drink
@@ -250,20 +278,57 @@ export const SIDES = [
   side("fries", "צ'יפס אמריקאי", 29),
 ];
 
-const plain = (id, category, name, price, image) => ({ id, category, name, price, image, groups: [] });
+const plain = (id, category, name, price, image) => ({
+  id,
+  category,
+  name,
+  price,
+  image,
+  groups: [],
+});
 
 export const MEAT_PORTIONS = [
-  plain("portion-meat", "portions", "מנת אנטריקוט", 30, "/images/sandwich-meat.jpg"),
-  plain("portion-chicken", "portions", "מנת עוף", 30, "/images/sandwich-chicken.jpg"),
-  plain("portion-burger", "portions", "מנת המבורגר", 30, "/images/sandwich-burger.jpg"),
+  plain(
+    "portion-meat",
+    "portions",
+    "מנת אנטריקוט",
+    30,
+    "/images/sandwich-meat.jpg",
+  ),
+  plain(
+    "portion-chicken",
+    "portions",
+    "מנת עוף",
+    30,
+    "/images/sandwich-chicken.jpg",
+  ),
+  plain(
+    "portion-burger",
+    "portions",
+    "מנת המבורגר",
+    30,
+    "/images/sandwich-burger.jpg",
+  ),
 ];
 
 export const DRINKS = [
   plain("drink-coke", "drinks", "קוקה קולה", 12, "/images/drinks/coke.png"),
-  plain("drink-coke-zero", "drinks", "קוקה קולה זירו", 12, "/images/drinks/coke-zero.png"),
+  plain(
+    "drink-coke-zero",
+    "drinks",
+    "קוקה קולה זירו",
+    12,
+    "/images/drinks/coke-zero.png",
+  ),
 ];
 
-export const ITEMS = [...mains, ...COMBOS, ...SIDES, ...MEAT_PORTIONS, ...DRINKS];
+export const ITEMS = [
+  ...mains,
+  ...COMBOS,
+  ...SIDES,
+  ...MEAT_PORTIONS,
+  ...DRINKS,
+];
 
 // Menu sections, in the order the menu page and the home page show them
 const mainsOf = (formatId) => mains.filter((m) => m.format === formatId);
@@ -273,10 +338,20 @@ export const CATEGORIES = [
     title: "כריכים",
     image: "/images/sandwich-chicken.jpg",
     items: mainsOf("sandwich"),
-    note: "רוצים יותר מילוי? כפול ב־25 ₪ ומשולש ב־44 ₪, גם בטורטייה ובסלט. בפורטבלו התוספת זולה יותר.",
+    note: "",
   },
-  { id: "rolls", title: "טורטייה", image: "/images/roll-meat.jpg", items: mainsOf("roll") },
-  { id: "salads", title: "סלטים", image: "/images/salad-meat.jpg", items: mainsOf("salad") },
+  {
+    id: "rolls",
+    title: "טורטייה",
+    image: "/images/roll-meat.jpg",
+    items: mainsOf("roll"),
+  },
+  {
+    id: "salads",
+    title: "סלטים",
+    image: "/images/salad-meat.jpg",
+    items: mainsOf("salad"),
+  },
   {
     id: "combos",
     title: "עסקיות",
@@ -284,16 +359,32 @@ export const CATEGORIES = [
     items: COMBOS,
     note: "מנה, צ'יפס ופחית לבחירה במחיר אחד.",
   },
-  { id: "sides", title: "מנצ'ס", image: "/images/side-king-mix.jpg", items: SIDES },
-  { id: "portions", title: "מנת בשר בצד", image: "/images/half.jpg", items: MEAT_PORTIONS },
-  { id: "drinks", title: "שתייה", image: "/images/drinks/coke.png", items: DRINKS },
+  {
+    id: "sides",
+    title: "מנצ'ס",
+    image: "/images/side-king-mix.jpg",
+    items: SIDES,
+  },
+  {
+    id: "portions",
+    title: "מנת בשר בצד",
+    image: "/images/half.jpg",
+    items: MEAT_PORTIONS,
+  },
+  {
+    id: "drinks",
+    title: "שתייה",
+    image: "/images/drinks/coke.png",
+    items: DRINKS,
+  },
 ];
 
 const byId = new Map(ITEMS.map((item) => [item.id, item]));
 export const getItem = (id) => byId.get(id);
 
 // The restaurant's own ordering rules, shown with every dish that has options
-export const ORDER_NOTE = "אפשר לשנות מנה רק מתוך האפשרויות שכאן, ואי אפשר לקבל את הירקות בצד.";
+export const ORDER_NOTE =
+  "אפשר לשנות מנה רק מתוך האפשרויות שכאן, ואי אפשר לקבל את הירקות בצד.";
 
 // Ingredients and sauces shown on the home page "what's inside" section
 export const IN_EVERY_SANDWICH = REMOVE.options.map((o) => o.label);
