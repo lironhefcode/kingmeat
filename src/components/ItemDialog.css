@@ -8,6 +8,11 @@
   background: var(--black);
   color: var(--white);
 }
+/* A flex column so the form fits inside the border; only .item-scroll scrolls */
+.item-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
 .item-dialog::backdrop { background: rgb(0 0 0 / .75); }
 @media (prefers-reduced-motion: no-preference) {
   .item-dialog[open] { animation: item-in .3s var(--ease); }
@@ -18,7 +23,7 @@
 .item-inner {
   display: flex;
   flex-direction: column;
-  max-height: inherit;
+  min-height: 0;
 }
 .item-scroll {
   flex: 1;
