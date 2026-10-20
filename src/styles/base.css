@@ -47,8 +47,8 @@
   --line: #E2E2E2;
   --line-strong: #8C8C8C;
   --surface: #F0F0F0;
-  --card: #F3F3F3;
-  --card-hover: #EAEAEA;
+  --card: #E9E9E9;
+  --card-hover: #DEDEDE;
   --danger: #C8102E;
   --focus: var(--black);
   --crown-text: #8A6A00;
@@ -136,7 +136,6 @@ fieldset { padding: 0; border: 0; min-width: 0; }
   font-size: .42em;
   font-weight: 500;
   margin-inline-end: .12em;
-  vertical-align: .55em;
 }
 .price-plain .cur {
   font-size: 1em;

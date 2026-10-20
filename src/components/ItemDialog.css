@@ -30,6 +30,9 @@
   overflow-y: auto;
   padding-bottom: 8px;
 }
+/* Still scrolls by wheel, touch and keyboard; the bar itself is hidden */
+.item-scroll { scrollbar-width: none; }
+.item-scroll::-webkit-scrollbar { display: none; }
 .item-media { position: relative; }
 .item-media img {
   width: 100%;
