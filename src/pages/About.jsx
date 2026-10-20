@@ -13,18 +13,24 @@ export function About() {
       <WavePanel as="header" className="about-head">
         <div className="container panel-head">
           <h1 className="page-title">
-            <span className="about-line">כריך אחד,</span>
-            <span className="about-line">עשוי ברצינות</span>
+            <span className="about-line">כריך דרום אמריקאי</span>
           </h1>
           <p className="about-intro">
-            קינג מיט מגישה בשרים מהגריל בסגנון ארגנטינאי, בג'בטה חמה מתנור לבנים: רצועות אנטריקוט, אבוקדו וצ'ימיצ'ורי,
-            עם ירקות טריים ושלושה רטבי בית.
+            קינג מיט מגישה בשרים מהגריל בסגנון ארגנטינאי, בג'בטה חמה מתנור
+            לבנים: רצועות אנטריקוט, אבוקדו וצ'ימיצ'ורי, עם ירקות טריים ושלושה
+            רטבי בית.
           </p>
         </div>
       </WavePanel>
 
       <figure className="about-wide">
-        <img src="/images/sandwich-meat.jpg" alt="כריך קינג מיט עם צ'ימיצ'ורי בצד" width="1600" height="1067" loading="lazy" />
+        <img
+          src="/images/sandwich-meat.jpg"
+          alt="כריך קינג מיט עם צ'ימיצ'ורי בצד"
+          width="1600"
+          height="1067"
+          loading="lazy"
+        />
       </figure>
 
       <div className="container about-body">
@@ -32,12 +38,13 @@ export function About() {
           <h2 className="about-h2">למה דרום אמריקאי</h2>
           <div className="about-text">
             <p>
-              בארגנטינה ובאורוגוואי, בשר מהגריל מגיע כמעט תמיד עם צ'ימיצ'ורי: רוטב ירוק של פטרוזיליה, שום, שמן וחומץ.
-              הוא חד, רענן, וחותך את השומן של הבשר.
+              בארגנטינה ובאורוגוואי, בשר מהגריל מגיע כמעט תמיד עם צ'ימיצ'ורי:
+              רוטב ירוק של פטרוזיליה, שום, שמן וחומץ. הוא חד, רענן, וחותך את
+              השומן של הבשר.
             </p>
             <p>
-              אצלנו הוא נכנס לתוך הכריך, יחד עם אבוקדו, רוטב שום, צ'יפוטלה וקארי. ואם תרצו עוד,
-              יש חמישה עשר רטבים לבחירה בצד.
+              אצלנו הוא נכנס לתוך הכריך, יחד עם אבוקדו, רוטב שום, צ'יפוטלה
+              וקארי. ואם תרצו עוד, יש חמישה עשר רטבים לבחירה בצד.
             </p>
           </div>
         </section>
@@ -46,16 +53,31 @@ export function About() {
           <h2 className="about-h2">לא רק אנטריקוט</h2>
           <div className="about-text">
             <p>
-              את אותו כריך אפשר להזמין עם רצועות עוף, עם המבורגר או עם פטריות פורטבלו לצמחונים. וכל מילוי מגיע
-              בשלוש דרכים: בג'בטה לבנה או מחיטה מלאה, בטורטייה או כסלט גדול.
+              את אותו כריך אפשר להזמין עם רצועות עוף, עם המבורגר או עם פטריות
+              פורטבלו לצמחונים. וכל מילוי מגיע בשלוש דרכים: בג'בטה לבנה או מחיטה
+              מלאה, בטורטייה או כסלט גדול.
             </p>
-            <Link className="btn btn-outline" to="/menu">לתפריט המלא</Link>
+            <Link className="btn btn-outline" to="/menu">
+              לתפריט המלא
+            </Link>
           </div>
         </section>
 
         <div className="about-pair">
-          <img src="/images/roll-meat.jpg" alt="קינג רול: אנטריקוט ועגבנייה בטורטייה" width="900" height="600" loading="lazy" />
-          <img src="/images/salad-meat.jpg" alt="סלט אנטריקוט עם קולסלאו, בצל מטוגן ובוטנים" width="900" height="600" loading="lazy" />
+          <img
+            src="/images/roll-meat.jpg"
+            alt="קינג רול: אנטריקוט ועגבנייה בטורטייה"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
+          <img
+            src="/images/salad-meat.jpg"
+            alt="סלט אנטריקוט עם קולסלאו, בצל מטוגן ובוטנים"
+            width="900"
+            height="600"
+            loading="lazy"
+          />
         </div>
 
         <section className="about-row">
@@ -81,7 +103,9 @@ export function About() {
               ))}
               <li>
                 <strong>הזמנות</strong>
-                <a href={telHref(RESTAURANT.phone)} dir="ltr">{RESTAURANT.phone}</a>
+                <a href={telHref(RESTAURANT.phone)} dir="ltr">
+                  {RESTAURANT.phone}
+                </a>
               </li>
             </ul>
             {RESTAURANT.branches

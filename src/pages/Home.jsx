@@ -28,7 +28,7 @@ export function Home() {
             <p className="hero-lead">רצועות אנטריקוט מהגריל בג'בטה מתנור לבנים, עם צ'ימיצ'ורי ואבוקדו.</p>
             <div className="hero-actions">
               <Link className="btn btn-black" to="/menu">להזמנה אונליין</Link>
-              <Link className="link-bar" to="/about">על קינג מיט</Link>
+              <Link className="btn btn-outline" to="/about">על קינג מיט</Link>
             </div>
             <p className="kosher">
               <CrownIcon className="crown" />
@@ -131,7 +131,7 @@ export function Home() {
                 <h3 className="branch-city">{b.city}</h3>
                 <p className="branch-street">{b.street}</p>
                 {b.hours.length > 0 && <HoursList hours={b.hours} className="branch-hours" />}
-                <a className="link-bar" href={wazeHref(b)} target="_blank" rel="noreferrer">
+                <a className="btn btn-outline btn-small" href={wazeHref(b)} target="_blank" rel="noreferrer">
                   ניווט בוויז
                 </a>
               </div>

@@ -49,6 +49,9 @@
   background: var(--crown);
 }
 
+/* Flat in the bar: at this size the darker bottom edge reads as a stripe */
+.header-order { --shelf: transparent; }
+
 /* Bag with a count bubble on its corner */
 .cart-btn {
   position: relative;

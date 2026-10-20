@@ -37,7 +37,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 32px;
+  gap: 12px;
   margin-top: 32px;
 }
 .kosher {
@@ -229,9 +229,7 @@
   font-size: 16px;
   color: var(--ash);
 }
-.branch .link-bar,
 .branch .btn { margin-top: auto; }
-.branch .link-bar { font-size: 28px; }
 
 /* Order band: red again at the bottom, wave on top */
 .order-band { padding-block: 72px 96px; }
