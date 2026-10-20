@@ -1,0 +1,106 @@
+/* Slides in from the inline end (left in Hebrew) */
+.drawer {
+  width: min(440px, 100vw);
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  margin-inline-start: auto;
+  padding: 0;
+  border: 0;
+  border-start-start-radius: 24px;
+  border-end-start-radius: 24px;
+  background: var(--black);
+  color: var(--white);
+}
+.drawer::backdrop { background: rgb(0 0 0 / .65); }
+@media (prefers-reduced-motion: no-preference) {
+  .drawer[open] { animation: drawer-in .3s var(--ease); }
+  .drawer[open]::backdrop { animation: backdrop-in .3s ease-out; }
+}
+@keyframes drawer-in { from { transform: translateX(-100%); } }
+
+.drawer-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.drawer-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+}
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 20px;
+}
+.drawer-empty {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  padding: 32px 20px;
+  color: var(--ash);
+}
+.drawer-foot {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border-top: 1px solid var(--line);
+}
+.drawer-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.drawer-total-price {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.cart-line {
+  display: flex;
+  gap: 14px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.cart-line:last-child { border-bottom: 0; }
+.cart-line img {
+  flex: none;
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--r-control);
+  background: var(--coal);
+}
+.cart-line-main { flex: 1; min-width: 0; }
+.cart-line-name { font-weight: 600; }
+.cart-line-detail {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ash);
+}
+.cart-line-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+.cart-line-price {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+}

@@ -1,0 +1,25 @@
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.qty-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.qty-btn svg { width: 18px; height: 18px; }
+.qty-btn:hover:not(:disabled) { background: var(--surface); }
+.qty-btn:disabled { opacity: .35; cursor: not-allowed; }
+.qty-value {
+  min-width: 28px;
+  font-weight: 600;
+  text-align: center;
+}

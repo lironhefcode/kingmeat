@@ -1,0 +1,8 @@
+.hours { margin: 0; }
+.hours > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 260px;
+}
+.hours dd { margin: 0; }

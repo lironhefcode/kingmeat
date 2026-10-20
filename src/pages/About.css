@@ -1,0 +1,93 @@
+/* The panel leaves room at the bottom for the photo to overlap its wave */
+.about-head .panel-head { padding-bottom: 160px; }
+.about-line { display: block; }
+.about-intro {
+  max-width: 44ch;
+  margin-top: 32px;
+  font-size: 22px;
+  line-height: 1.6;
+}
+.about-head .page-title .about-line:last-child { color: var(--black); }
+
+/* Wide photo pulled up across the panel's wave */
+.about-wide {
+  position: relative;
+  z-index: 1;
+  margin-top: -120px;
+  padding-inline: var(--gutter);
+}
+.about-wide img {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: 50% 60%;
+  border-radius: var(--r-panel);
+}
+
+.about-body { padding-block: 96px 120px; }
+.about-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 24px 64px;
+  padding-block: 48px;
+  border-top: 1px solid var(--line);
+}
+.about-h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 52px;
+  line-height: .9;
+}
+.about-text {
+  display: grid;
+  justify-items: start;
+  gap: 20px;
+  max-width: 60ch;
+  font-size: 19px;
+  line-height: 1.7;
+}
+.about-kosher {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.about-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-block: 24px 48px;
+}
+.about-pair img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--r-tile);
+}
+
+.about-branches { display: grid; gap: 12px; }
+.about-branches li {
+  display: flex;
+  gap: 16px;
+}
+.about-branches strong { min-width: 6em; }
+.about-branches a { text-underline-offset: 4px; }
+.about-hours { width: 100%; max-width: 320px; }
+.about-hours-title { font-weight: 600; }
+.about-hours .hours { color: var(--ash); }
+
+@media (max-width: 720px) {
+  .about-head .panel-head { padding-bottom: 96px; }
+  .about-wide { margin-top: -64px; }
+  .about-wide img { border-radius: var(--r-tile); }
+  .about-intro { font-size: 19px; }
+  .about-wide img { aspect-ratio: 4 / 3; }
+  .about-body { padding-block: 64px 80px; }
+  .about-row { grid-template-columns: 1fr; padding-block: 36px; }
+  .about-h2 { font-size: 44px; }
+  .about-text { font-size: 17px; }
+  .about-pair { grid-template-columns: 1fr; }
+}

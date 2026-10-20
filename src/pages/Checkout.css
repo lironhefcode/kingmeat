@@ -1,0 +1,96 @@
+.checkout-empty {
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+  padding-block: 96px 160px;
+}
+.checkout-empty .lead { margin-top: 0; }
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+  padding-bottom: 120px;
+}
+
+.checkout-form { display: grid; gap: 40px; }
+.checkout-step {
+  display: grid;
+  gap: 16px;
+}
+.step-title {
+  float: inline-start; /* lets the legend sit inside the grid flow */
+  width: 100%;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+}
+.step-sub { display: grid; gap: 10px; }
+.step-sub .label { font-size: 15px; font-weight: 600; }
+.choice-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+}
+.time-field { max-width: 200px; }
+
+.checkout-summary {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  padding: 28px;
+  border-radius: var(--r-panel);
+  background: var(--coal);
+}
+.summary-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+}
+.checkout-summary .cart-lines {
+  max-height: 42vh;
+  margin-top: 8px;
+  overflow-y: auto;
+}
+.summary-totals {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.summary-totals > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.summary-totals dt { color: var(--ash); }
+.summary-totals dd { margin: 0; font-weight: 600; }
+.summary-grand dt { color: var(--white); font-weight: 600; }
+.summary-grand dd {
+  font-family: var(--display);
+  font-size: 52px;
+  line-height: 1;
+}
+.summary-error { margin-top: 16px; }
+.summary-submit { margin-top: 20px; min-height: 56px; font-size: 18px; }
+
+@media (max-width: 960px) {
+  .checkout-grid { grid-template-columns: 1fr; gap: 48px; }
+  .checkout-summary { position: static; }
+  .checkout-summary .cart-lines { max-height: none; }
+}
+
+@media (max-width: 720px) {
+  .checkout-grid { padding-bottom: 80px; }
+  .field-grid { grid-template-columns: 1fr; }
+  .step-title { font-size: 38px; }
+  .checkout-summary { padding: 22px 16px; border-radius: var(--r-tile); }
+}
