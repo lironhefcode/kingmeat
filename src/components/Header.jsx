@@ -2,6 +2,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { useCart } from "../cart/CartContext";
 import { RESTAURANT } from "../data/restaurant";
 import { BagIcon } from "./Icons";
+import { ThemeToggle } from "./ThemeToggle";
 import "./Header.css";
 
 export function Header() {
@@ -21,6 +22,7 @@ export function Header() {
         {pathname !== "/menu" && (
           <Link className="btn btn-red btn-small header-order" to="/menu">הזמינו עכשיו</Link>
         )}
+        <ThemeToggle />
         <button
           type="button"
           className="cart-btn"

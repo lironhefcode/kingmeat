@@ -5,8 +5,8 @@
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--bg);
+  color: var(--fg);
 }
 /* A flex column so the form fits inside the border; only .item-scroll scrolls */
 .item-dialog[open] {
@@ -41,9 +41,9 @@
   top: 14px;
   inset-inline-end: 14px;
   border-radius: 50%;
-  background: var(--black);
+  background: var(--bg);
 }
-.item-close:hover { background: var(--red); }
+.item-close:hover { background: var(--red); color: var(--white); }
 
 .item-head {
   display: flex;
@@ -74,7 +74,7 @@
   margin: 16px 24px 0;
   padding: 12px 14px;
   border-radius: var(--r-control);
-  background: var(--coal);
+  background: var(--card);
   font-size: 15px;
 }
 
@@ -103,7 +103,7 @@
   gap: 12px;
   padding: 16px 24px;
   border-top: 1px solid var(--line);
-  background: var(--black);
+  background: var(--bg);
 }
 .item-foot .qty { flex: none; }
 .item-foot .qty-btn { height: 48px; }

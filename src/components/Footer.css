@@ -18,13 +18,13 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 1;
-  color: var(--white);
+  color: var(--fg);
 }
 .footer-heading {
   margin-bottom: 14px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--white);
+  color: var(--fg);
 }
 .footer-heading::after {
   content: "";
@@ -38,7 +38,7 @@
 .footer-list { display: grid; gap: 6px; }
 .footer-phone { margin-top: 12px; }
 .site-footer a { text-underline-offset: 4px; }
-.site-footer a:hover { color: var(--white); }
+.site-footer a:hover { color: var(--fg); }
 .footer-copy {
   margin-top: 48px;
   font-size: 14px;

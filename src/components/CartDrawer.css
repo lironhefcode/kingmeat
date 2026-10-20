@@ -10,8 +10,8 @@
   border: 0;
   border-start-start-radius: 24px;
   border-end-start-radius: 24px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--bg);
+  color: var(--fg);
 }
 .drawer::backdrop { background: rgb(0 0 0 / .65); }
 @media (prefers-reduced-motion: no-preference) {
@@ -82,7 +82,7 @@
   height: 54px;
   object-fit: cover;
   border-radius: var(--r-control);
-  background: var(--coal);
+  background: var(--card);
 }
 .cart-line-main { flex: 1; min-width: 0; }
 .cart-line-name { font-weight: 600; }

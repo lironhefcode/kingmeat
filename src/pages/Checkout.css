@@ -46,7 +46,7 @@
   top: calc(var(--header-h) + 24px);
   padding: 28px;
   border-radius: var(--r-panel);
-  background: var(--coal);
+  background: var(--card);
 }
 .summary-title {
   font-family: var(--display);
@@ -73,7 +73,7 @@
 }
 .summary-totals dt { color: var(--ash); }
 .summary-totals dd { margin: 0; font-weight: 600; }
-.summary-grand dt { color: var(--white); font-weight: 600; }
+.summary-grand dt { color: var(--fg); font-weight: 600; }
 .summary-grand dd {
   font-family: var(--display);
   font-size: 52px;

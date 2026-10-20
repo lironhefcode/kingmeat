@@ -6,6 +6,15 @@
   <title>קינג מיט | כריך אנטריקוט דרום אמריקאי</title>
   <meta name="description" content="קינג מיט: כריך אנטריקוט דרום אמריקאי בג'בטה אפויה בתנור לבנים, עם צ'ימיצ'ורי וגוואקמולי. כשר. תפריט מלא והזמנה אונליין.">
   <meta name="theme-color" content="#000000">
+  <script>
+    // Apply the saved theme before first paint so light mode doesn't flash dark
+    try {
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.dataset.theme = "light";
+        document.querySelector('meta[name="theme-color"]').content = "#FFFFFF";
+      }
+    } catch {}
+  </script>
   <meta property="og:title" content="קינג מיט | כריך אנטריקוט דרום אמריקאי">
   <meta property="og:description" content="ג'בטה אפויה בתנור לבנים, אנטריקוט, צ'ימיצ'ורי וגוואקמולי. כשר.">
   <meta property="og:type" content="website">

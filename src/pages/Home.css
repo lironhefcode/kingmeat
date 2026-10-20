@@ -98,11 +98,11 @@
   height: 100%;
   overflow: hidden;
   border-radius: var(--r-tile);
-  background: var(--coal);
+  background: var(--card);
   text-decoration: none;
   transition: background-color .15s;
 }
-.cat-tile:hover { background: #262626; }
+.cat-tile:hover { background: var(--card-hover); }
 .cat-tile img {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -162,7 +162,7 @@
   align-items: start;
   padding: 56px;
   border-radius: var(--r-panel);
-  background: var(--coal);
+  background: var(--card);
 }
 .inside-block { margin-top: 36px; }
 .inside-block h3 { font-size: 22px; font-weight: 700; }
@@ -176,11 +176,11 @@
 .tags li {
   padding: 5px 14px;
   border-radius: 999px;
-  background: var(--black);
+  background: var(--bg);
   font-size: 16px;
   font-weight: 500;
 }
-.tag-price { color: var(--crown); margin-inline-start: 6px; }
+.tag-price { color: var(--crown-text); margin-inline-start: 6px; }
 .inside-media {
   position: sticky;
   top: calc(var(--header-h) + 32px);
@@ -207,7 +207,7 @@
   gap: 8px;
   padding: 32px;
   border-radius: var(--r-tile);
-  background: var(--coal);
+  background: var(--card);
 }
 .branch-city {
   font-family: var(--display);
@@ -220,7 +220,7 @@
   font-size: 19px;
   color: var(--ash);
 }
-.branch-street a { color: var(--white); text-underline-offset: 4px; }
+.branch-street a { color: var(--fg); text-underline-offset: 4px; }
 .branch-hours {
   display: grid;
   gap: 2px;

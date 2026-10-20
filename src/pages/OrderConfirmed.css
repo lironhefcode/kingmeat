@@ -16,7 +16,7 @@
   color: var(--ash);
 }
 .confirmed-number strong {
-  color: var(--white);
+  color: var(--fg);
   font-size: 24px;
   margin-inline-start: 6px;
 }
@@ -64,7 +64,7 @@
   margin-block: 40px 20px;
   color: var(--ash);
 }
-.confirmed-help a { color: var(--white); text-underline-offset: 4px; }
+.confirmed-help a { color: var(--fg); text-underline-offset: 4px; }
 
 @media (max-width: 720px) {
   .confirmed { padding-block: 48px 80px; }
